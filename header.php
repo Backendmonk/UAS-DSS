@@ -8,37 +8,44 @@
 </head>
 
 <body>
-<header>
-	<h1>Sistem Pendukung Keputusan dengan metode AHP</h1>
-</header>
-
-<div class="wrapper">
-	<nav id="navigation" role="navigation">
-		<ul>
-			<li><a class="item" href="index.php">Home</a></li>
-			<li>
-				<a class="item" href="kriteria.php">Kriteria
-					<div class="ui blue tiny label" style="float: right;"><?php echo getJumlahKriteria(); ?></div>
-				</a>
-			</li>
-			<li>
-				<a class="item" href="alternatif.php">Alternatif
-					<div class="ui blue tiny label" style="float: right;"><?php echo getJumlahAlternatif(); ?></div>
-				</a>
-			</li>
-			<li><a class="item" href="bobot_kriteria.php">Perbandingan Kriteria</a></li>
-			<li><a class="item" href="bobot.php?c=1">Perbandingan Alternatif</a></li>
-				<ul>
-					<?php
-
-						if (getJumlahKriteria() > 0) {
-							for ($i=0; $i <= (getJumlahKriteria()-1); $i++) { 
-								echo "<li><a class='item' href='bobot.php?c=".($i+1)."'>".getKriteriaNama($i)."</a></li>";
-							}
-						}
-
-					?>
-				</ul>
-			<li><a class="item" href="hasil.php">Hasil</a></li>
-		</ul>
-	</nav>
+	<div class="ui top attached demo menu borderless">
+		<a class="item">
+			<i class="sidebar icon"></i> 
+		</a>
+		<a class="item"  href="index.php">
+			<h4>Sistem Pendukung Keputusan dengan metode AHP</h4>
+		</a>
+	</div>
+	<div class="ui bottom attached segment">
+	<div class="ui labeled  left inline vertical sidebar menu">
+		<a class="item"  href="index.php">
+		Home
+		</a>
+		<a class="item"  href="kriteria.php">
+		
+		Kriteria
+		<div class="ui blue tiny label" style="float: right;"><?php echo getJumlahKriteria(); ?></div>
+		</a>
+		<a class="item" href="alternatif.php">
+		
+		Alternatif
+		<div class="ui blue tiny label" style="float: right;"><?php echo getJumlahAlternatif(); ?></div>
+		</a>
+		<a class="item" href="bobot_kriteria.php">
+		Perbandingan Kriteria
+		</a>
+		<a class="item" href="bobot.php?c=1"> 
+		Perbandingan Alternatif
+		</a>
+			<?php
+				if (getJumlahKriteria() > 0) {
+					for ($i=0; $i <= (getJumlahKriteria()-1); $i++) { 
+						echo "<li><a class='item' style='padding-left: 1.8rem;'  href='bobot.php?c=".($i+1)."'>".getKriteriaNama($i)."</a></li>";
+					}
+				}
+			?>
+	</div>
+	<div class="pusher">
+		<div class="ui basic segment">
+		
+ 
