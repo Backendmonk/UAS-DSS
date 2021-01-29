@@ -1,5 +1,7 @@
-</div> <!-- /wrapper -->
 
+
+	</div>
+</div>
 <footer>
 	<p>Copyright &copy; <?php echo date("Y"); ?></p>
 </footer>
@@ -21,5 +23,10 @@
 	  })
 	;
 </script>
+<script type="text/javascript">
+$('.ui.sidebar').sidebar({
+    context: $('.bottom.segment')
+  })
+  .sidebar('attach events', '.menu .item');</script>
 </body>
 </html>
